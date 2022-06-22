@@ -64,7 +64,7 @@ let a = prompt('Первое число?', 1)
 let b = prompt('Второе число?', 2)
 alert(+a + +b)
 
-2.8.5
+2.9
 5 > 4 // true
 'ананас' > 'яблоко' // false
 '2' > '12' // true
@@ -73,10 +73,10 @@ undefined === null // false
 null == '\n0\n' // false
 null === +'\n0\n' //false
 
-2.9.1
+2.10.1
 да
 
-2.9.2
+2.10.2
 let question = promt('Какое "официальное" название JavaScript?', '')
 
 if (question == 'ECMAScript') {
@@ -85,7 +85,7 @@ if (question == 'ECMAScript') {
     alert('Не знаете? ECMAScript!')
 }
 
-2.9.3
+2.10.3
 let number = promt('Введите число:', '')
 
 if (number > 0) {
@@ -96,12 +96,12 @@ if (number > 0) {
     alert(0)
 }
 
-2.9.4
+2.10.4
 let result
 
 result = (a + b < 4) ? 'Мало' : 'Много'
 
-2.9.5
+2.10.5
 let message
 
 message = (login == 'Сотрудник') ? 'Привет' : (login == 'Директор')
