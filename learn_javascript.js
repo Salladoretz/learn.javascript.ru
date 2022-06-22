@@ -258,4 +258,14 @@ if (n < 1) {
 } else {
   alert(pow(x, n))
 }
+
+2.17.1
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no()
+}
+
+ask('Вы согласны?',
+() => alert('Вы согласились.'),
+() => alert('Вы отменили выполнение'))
 */
