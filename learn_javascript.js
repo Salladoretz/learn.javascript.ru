@@ -107,4 +107,94 @@ let message
 message = (login == 'Сотрудник') ? 'Привет' : (login == 'Директор')
     ? 'Здравствуйте' : (login == '')
         ? 'Нет логина' : ''
+
+2.11.1
+2
+
+2.11.2
+1
+2
+
+2.11.3
+null
+
+2.11.4
+1
+undefined
+
+2.11.5
+3
+
+2.11.6
+if (age >= 14 && age <= 90)
+
+2.11.7
+if (!(age >= 14 && age <= 90))
+if (age < 14 || age > 90)
+
+2.11.8
+alert('first')
+alert('third')
+
+2.11.9
+let user = prompt('Кто там?', '')
+
+if (user === 'Админ') {
+
+  let pass = prompt('Пароль?', '')
+  
+  if (pass === 'Я главный') {
+    alert('Здравствуйте!')
+  } else if (pass === '' || pass === null) {
+    alert('Отменено')
+  } else {
+    alert('Неверный пароль')
+  }
+
+} else if (userName === '' || userName === null) {
+  alert('Отменено')
+} else {
+  alert('Я вас не знаю')
+}
+
+2.13.1
+1
+
+2.13.2
+1, 2, 3, 4
+1, 2, 3, 4, 5
+
+2.13.3
+0, 1, 2, 3, 4
+
+2.13.4
+for (let i = 2; i <= 10; i++) {
+  if (i % 2 == 0) {
+    alert( i )
+  }
+}
+
+2.13.5
+let i = 0;
+while (i < 3) {
+  alert( `number ${i}!` )
+  i++
+}
+
+2.13.6
+let num
+
+do {
+  num = prompt('Введите число больше 100?', 0)
+} while (num <= 100 && num)
+
+2.13.7
+let numbersRange = 10
+
+nextNumber: for (let i = 2; i <= numbersRange; i++) {
+    for (let j = 2; j < i; j++) {
+        if (i % j == 0) continue nextNumber
+    }
+    console.log(i)
+}
 */
