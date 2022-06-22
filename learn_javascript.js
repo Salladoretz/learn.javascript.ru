@@ -268,4 +268,43 @@ function ask(question, yes, no) {
 ask('Вы согласны?',
 () => alert('Вы согласились.'),
 () => alert('Вы отменили выполнение'))
+
+4.1.1
+const user = {}
+user.name = 'John'
+user.surname = 'Smith'
+user.name = 'Pete'
+delete user.name
+
+4.1.2
+function isEmpty(obj) {
+  for (let key in obj) {
+    return false
+  }
+  return true
+}
+
+4.1.3
+Да
+
+4.1.4
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+}
+
+let sum = 0
+for (let key in salaries) {
+  sum += salaries[key]
+}
+
+4.1.5
+function multiplyNumeric(obj) {
+  for (let key in obj) {
+    if (typeof obj[key] == 'number') {
+      obj[key] *= 2
+    }
+  }
+}
 */
