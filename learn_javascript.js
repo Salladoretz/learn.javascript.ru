@@ -307,4 +307,44 @@ function multiplyNumeric(obj) {
     }
   }
 }
+
+4.4.1
+Ошибка
+
+4.4.3
+Ошибка
+
+4.4.4
+const calculator = {
+
+  read() {
+    this.a = +prompt('a?', 0)
+    this.b = +prompt('b?', 0)
+  },
+
+  sum() {
+    return this.a + this.b
+  },
+
+  mul() {
+    return this.a * this.b
+  }
+}
+
+4.4.5
+let ladder = {
+  step: 0,
+  up() {
+    this.step++
+    return this
+  },
+  down() {
+    this.step--
+    return this
+  },
+  showStep() {
+    alert(this.step)
+    return this
+  }
+}
 */
