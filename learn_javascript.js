@@ -383,4 +383,37 @@ function Accumulator(startingValue) {
     this.value += +prompt('Добавить число?', 0)
   }
 }
+
+5.1.1
+Нет
+
+5.2.1
+let a = +prompt('Введите первое число', '')
+let b = +prompt('Введите второе число', '')
+
+alert(a + b)
+
+5.2.3
+function readNumber() {
+  let num
+
+  do {
+    num = prompt('Введите число', 0)
+  } while (!isFinite(num))
+
+  if (num === null || num === '') return null
+
+  return +num
+}
+
+5.2.5
+function random(min, max) {
+  return min + Math.random() * (max - min)
+}
+
+5.2.6
+function randomInteger(min, max) {
+  let randInt = min + Math.random() * (max + 1 - min)
+  return Math.floor(rand)
+}
 */
