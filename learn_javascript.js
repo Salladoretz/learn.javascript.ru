@@ -418,9 +418,34 @@ function randomInteger(min, max) {
 }
 
 5.3.1
-4
+function ucFirst(str) {
+  if (!str) return str
+
+  return str[0].toUpperCase() + str.slice(1)
+}
 
 5.3.2
+function checkSpam(str) {
+  let lowerStr = str.toLowerCase()
+
+  return lowerStr.includes('viagra') || lowerStr.includes('xxx')
+}
+
+5.3.3
+function truncate(str, maxlength) {
+  return (str.length > maxlength) ?
+    str.slice(0, maxlength - 1) + '…' : str
+}
+
+5.3.4
+function extractCurrencyValue(str) {
+  return +str.slice(1);
+}
+
+5.4.1
+4
+
+5.4.2
 let styles = ['Джаз', 'Блюз']
 
 styled.push('Рок-н-ролл')
@@ -431,7 +456,7 @@ alert(styles.shift())
 
 styles.unshift('Рэп', 'Регги')
 
-5.3.4
+5.4.4
 function sumInput() {
 
   let numbers = []
@@ -449,7 +474,7 @@ function sumInput() {
   return sum
 }
 
-5.3.5
+5.4.5
 function getMaxSubSum(arr) {
   let maxSum = 0
   let partialSum = 0
@@ -461,4 +486,5 @@ function getMaxSubSum(arr) {
   }
   return maxSum
 }
+
 */
