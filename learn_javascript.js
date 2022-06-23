@@ -610,4 +610,158 @@ map.set('name', 'John')
 let keys = Array.from(map.keys())
 
 keys.push('more')
+
+5.8.1
+let messages = [
+    {text: 'Hello', from: 'John'},
+    {text: 'How goes?', from: 'John'},
+    {text: 'See you soon', from: 'Alice'}
+]
+
+let readMessages = new WeakSet()
+
+5.8.2
+let readMap = new WeakMap()
+
+readMap.set(messages[0], new Date(2017, 1, 1))
+
+5.9.1
+function sumSalaries(salaries) {
+
+  let sum = 0
+  for (let salary of Object.values(salaries)) {
+    sum += salary
+  }
+
+  return sum
+}
+
+5.9.2
+function count(obj) {
+  return Object.keys(obj).length
+}
+
+5.10.1
+let {name, years: age, isAdmin = false} = user
+
+5.10.2
+function topSalary(salaries) {
+
+  let max = 0
+  let maxName = null
+
+  for(const [name, salary] of Object.entries(salaries)) {
+    if (max < salary) {
+      max = salary
+      maxName = name
+    }
+  }
+
+  return maxName
+}
+
+5.11.1
+let obj = new Date(2012, 1, 20, 3, 12)
+
+5.11.2
+function getWeekDay(date) {
+  let days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ']
+
+  return days[date.getDay()]
+}
+
+5.11.3
+function getLocalDay(date) {
+
+  let day = date.getDay()
+
+  if (day == 0) {
+    day = 7;
+  }
+
+  return day
+}
+
+5.11.4
+function getDateAgo(date, days) {
+  let dateCopy = new Date(date)
+
+  dateCopy.setDate(date.getDate() - days)
+  return dateCopy.getDate()
+}
+
+5.11.5
+function getLastDayOfMonth(year, month) {
+  let date = new Date(year, month + 1, 0)
+  return date.getDate()
+}
+
+5.11.6
+function getSecondsToday() {
+  let d = new Date()
+  return d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds()
+}
+
+5.11.7
+function getSecondsToTomorrow() {
+  let now = new Date();
+  let tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1)
+  let diff = tomorrow - now
+  return Math.round(diff / 1000)
+}
+
+5.11.8
+function formatDate(date) {
+  let dayOfMonth = date.getDate()
+  let month = date.getMonth() + 1
+  let year = date.getFullYear()
+  let hour = date.getHours()
+  let minutes = date.getMinutes()
+  let diffMs = new Date() - date
+  let diffSec = Math.round(diffMs / 1000)
+  let diffMin = diffSec / 60
+  let diffHour = diffMin / 60
+
+  year = year.toString().slice(-2)
+  month = month < 10 ? '0' + month : month
+  dayOfMonth = dayOfMonth < 10 ? '0' + dayOfMonth : dayOfMonth
+  hour = hour < 10 ? '0' + hour : hour
+  minutes = minutes < 10 ? '0' + minutes : minutes
+
+  if (diffSec < 1) {
+    return 'прямо сейчас'
+  } else if (diffMin < 1) {
+    return `${diffSec} сек. назад`
+  } else if (diffHour < 1) {
+    return `${diffMin} мин. назад`
+  } else {
+    return `${dayOfMonth}.${month}.${year} ${hour}:${minutes}`
+  }
+}
+
+5.12.1
+let user = {
+  name: "Василий Иванович",
+  age: 35
+}
+
+let user2 = JSON.parse(JSON.stringify(user))
+
+5.12.2
+let room = {
+  number: 23
+}
+
+let meetup = {
+  title: 'Совещание',
+  occupiedBy: [{name: 'Иванов'}, {name: 'Петров'}],
+  place: room
+}
+
+room.occupiedBy = meetup
+meetup.self = meetup
+
+alert( JSON.stringify(meetup, function replacer(key, value) {
+  return (key != '' && value == meetup) ? undefined : value
+}))
 */
