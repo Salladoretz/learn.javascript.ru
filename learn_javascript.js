@@ -764,4 +764,258 @@ meetup.self = meetup
 alert( JSON.stringify(meetup, function replacer(key, value) {
   return (key != '' && value == meetup) ? undefined : value
 }))
+
+6.1.1
+function sumTo(n) {
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    sum += i
+  }
+  return sum
+}
+
+function sumTo(n) {
+  if (n == 1) return 1
+  return n + sumTo(n - 1)
+}
+
+function sumTo(n) {
+  return n * (n + 1) / 2
+}
+
+6.1.2
+function factorial(n) {
+  return (n != 1) ? n * factorial(n - 1) : 1
+}
+
+6.1.3
+function fib(n) {
+  let a = 1;
+  let b = 1;
+  for (let i = 3; i <= n; i++) {
+    let c = a + b;
+    a = b;
+    b = c;
+  }
+  return b;
+}
+
+6.1.4
+let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null
+      }
+    }
+  }
+}
+
+function printList(list) {
+  alert(list.value)
+  if (list.next) {
+    printList(list.next)
+  }
+}
+
+6.1.5
+let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null
+      }
+    }
+  }
+};
+
+function printReverseList(list) {
+ if (list.next) {
+    printReverseList(list.next)
+  }
+  alert(list.value)
+}
+
+6.3.1
+0.1
+
+6.3.2
+да
+
+6.3.3
+ошибка
+
+6.3.4
+function sum(a) {
+  return function(b) {
+    return a + b
+  }
+}
+
+6.3.5
+function inBetween(a, b) {
+  return function(x) {
+    return x >= a && x <= b
+  }
+}
+
+function inArray(arr) {
+  return function(x) {
+    return arr.includes(x)
+  }
+}
+
+6.3.6
+function byField(field) {
+  return (a, b) => a[field] > b[field] ? 1 : -1
+}
+
+6.3.7
+function makeArmy() {
+  let shooters = [];
+  for(let i = 0; i < 10; i++) {
+    let shooter = function() {
+      alert( i )
+    }
+    shooters.push(shooter)
+  }
+  return shooters
+}
+
+6.6.1
+function makeCounter() {
+  let count = 0
+  function counter() {
+    return count++
+  }
+  counter.set = value => count = value
+  counter.decrease = () => count--
+  return counter
+}
+
+6.6.2
+function sum(a) {
+  let currentSum = a
+  function f(b) {
+    currentSum += b;
+    return f
+  }
+  f.toString = function() {
+    return currentSum;
+  }
+  return f
+}
+
+6.8.1
+function printNumbers(from, to) {
+  let current = from
+
+  let timerId = setInterval(function() {
+    alert(current)
+    if (current == to) {
+      clearInterval(timerId)
+    }
+    current++
+  }, 1000)
+}
+
+function printNumbers(from, to) {
+  let current = from
+
+  setTimeout(function go() {
+    alert(current)
+    if (current < to) {
+      setTimeout(go, 1000)
+    }
+    current++
+  }, 1000)
+}
+
+6.8.2
+100000000
+
+6.9.1
+function spy(func) {
+  function wrapper(...args) {
+    wrapper.calls.push(args)
+    return func.apply(this, arguments)
+  }
+  wrapper.calls = []
+  return wrapper
+}
+
+6.9.2
+function delay(f, ms) {
+  return function() {
+    setTimeout(() => f.apply(this, arguments), ms)
+  }
+}
+
+6.9.3
+function debounce(f, ms) {
+  let isCooldown = false
+  return function() {
+    if (isCooldown) return
+    f.apply(this, arguments)
+    isCooldown = true
+    setTimeout(() => isCooldown = false, ms)
+  }
+}
+
+6.9.4
+function throttle(func, ms) {
+  let isThrottled = false,
+    savedArgs,
+    savedThis
+
+  function wrapper() {
+    if (isThrottled) { // (2)
+      savedArgs = arguments
+      savedThis = this
+      return
+    }
+
+    func.apply(this, arguments)
+
+    isThrottled = true
+
+    setTimeout(function() {
+      isThrottled = false
+      if (savedArgs) {
+        wrapper.apply(savedThis, savedArgs)
+        savedArgs = savedThis = null
+      }
+    }, ms)
+  }
+  return wrapper
+}
+
+6.10.1
+function f() {
+  alert( this )
+}
+
+let user = {
+  g: f.bind(null)
+}
+
+6.10.2
+Вася
+
+6.10.3
+undefined
+
+6.10.4
+askPassword(user.loginOk.bind(user), user.loginFail.bind(user))
+
+6.10.5
+askPassword(() => user.login(true), () => user.login(false))
 */
