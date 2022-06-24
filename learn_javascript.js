@@ -1176,4 +1176,12 @@ class Rabbit extends Object {
     this.name = name
   }
 }
+
+10.2.2
+class FormatError extends SyntaxError {
+  constructor(message) {
+    super(message)
+    this.name = 'FormatError'
+  }
+}
 */
