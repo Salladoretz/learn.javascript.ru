@@ -1018,4 +1018,90 @@ askPassword(user.loginOk.bind(user), user.loginFail.bind(user))
 
 6.10.5
 askPassword(() => user.login(true), () => user.login(false))
+
+8.1.1
+true, null, undefined
+
+8.1.2
+let head = {
+  glasses: 1
+}
+
+let table = {
+  pen: 3,
+  __proto__: head
+}
+
+let bed = {
+  sheet: 1,
+  pillow: 2,
+  __proto__: table
+}
+
+let pockets = {
+  money: 2000,
+  __proto__: bed
+}
+
+8.1.3
+rabbit
+
+8.1.4
+let hamster = {
+  stomach: [],
+  eat(food) {
+    this.stomach.push(food)
+  }
+}
+
+let speedy = {
+  __proto__: hamster,
+  stomach: []
+}
+
+let lazy = {
+  __proto__: hamster,
+  stomach: []
+}
+
+8.2.1
+true, false, true, undefined
+
+8.3.1
+Function.prototype.defer = function(ms) {
+  setTimeout(this, ms);
+}
+
+function f() {
+  alert("Hello!")
+}
+
+8.3.2
+Function.prototype.defer = function(ms) {
+  let f = this
+  return function(...args) {
+    setTimeout(() => f.apply(this, args), ms)
+  }
+}
+
+function f(a, b) {
+  alert( a + b )
+}
+
+8.4.1
+let dictionary = Object.create(null, {
+  toString: {
+    value() {
+      return Object.keys(this).join()
+    }
+  }
+})
+
+8.4.2
+function Rabbit(name) {
+  this.name = name
+}
+Rabbit.prototype.sayHi = function() {
+  alert( this.name )
+}
 */
