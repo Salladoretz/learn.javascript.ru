@@ -1520,4 +1520,133 @@ function positionAt(anchor, position, elem) {
   }
 }
 
+Глава 3.
+8.4.3
+
+<div class="nav">
+  <img src="https://js.cx/clipart/arrow-left.jpg" class="left" width="40" height="40">
+    <img src="https://js.cx/clipart/arrow-right.jpg" class="right" width="40" height="40">
+      <ul class="pages">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+      </ul>
+    </div>
+
+    <style>
+      .nav {
+        height: 40px;
+      width: 80%;
+      margin: auto;
+    }
+
+      .nav .left {
+        float: left;
+      cursor: pointer;
+    }
+
+      .nav .right {
+        float: right;
+      cursor: pointer;
+    }
+
+      .nav .pages {
+        list - style: none;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+      .nav .pages li {
+        display: inline;
+      margin: 0 3px;
+      line-height: 40px;
+      cursor: pointer;
+    }
+    </style>
+
+8.4.4
+.right {
+  float:right;
+  width:70%;
+  box-sizing: border-box;
+  border-left: 2px solid green;
+  padding-left: 10px;
+  background: tan;
+}
+
+8.5.1
+#box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+8.6.1
+#ball {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+
+8.6.3
+.arrow {
+  position: absolute;
+  height: 60px;
+  border: 1px solid black;
+  font-size: 28px;
+  line-height: 60px;
+}
+
+8.11.2
+input {
+  margin: 0;
+  width: 12em;
+}
+
+#placeholder {
+  color: red;
+  margin: -1.3em 0 0 0.2em;
+}
+
+8.15.1
+function test(selector, count) {
+  let elems = document.querySelectorAll(selector)
+  let ok = (elems.length == count)
+  
+  if (!ok) alert(selector + ': ' + elems.length + ' != ' + count);
+}
+
+test('input[type="checkbox"]', 2)
+test('input[type="checkbox"]:not(:checked)', 1)
+test('[id|="message"]', 6)
+test('[id^="message-"]', 5)
+test('a[href$=".zip"]', 1)
+test('[data-action~="delete"]', 2)
+test('[data-action]:not([data-action~="delete"])', 1)
+test('#messages li:nth-child(2n)', 3)
+test('h3#widget-title + *', 1)
+test('h3#widget-title ~ a', 2)
+test('#messages li:last-child a', 1)
+
+8.15.2
+li:nth-child(n+2) {
+  margin-top: 1.5em;
+}
+
+8.15.3
+li:nth-child(odd):not(:first-child) {
+  margin-top: 1.5em;
+}
 */
